@@ -33,13 +33,6 @@
   }
   h1{margin:0 0 6px;font-size:19px;font-weight:800;color:var(--ink)}
   p{margin:0 0 24px;font-size:13px;color:var(--ink-soft)}
-  .spinner{
-    width:22px;height:22px;margin:0 auto 20px;border-radius:50%;
-    border:3px solid color-mix(in srgb, var(--accent) 25%, transparent);
-    border-top-color:var(--accent);animation:spin .8s linear infinite;
-  }
-  @media (prefers-reduced-motion: reduce){ .spinner{animation:none} }
-  @keyframes spin{to{transform:rotate(360deg)}}
   a.open{
     display:inline-block;width:100%;padding:13px 18px;border-radius:12px;
     background:var(--accent);color:#fff;font-weight:700;font-size:14px;text-decoration:none;
@@ -50,15 +43,10 @@
 
 <div class="card">
   <div class="mark">上々<br>納品書</div>
-  <div class="spinner" aria-hidden="true"></div>
   <h1>納品書トラッカー</h1>
-  <p>アプリを開いています…</p>
-  <a class="open" id="openLink" href="https://script.google.com/macros/s/AKfycbyTnbWRFSx17HDczAzchackRgQ8lVUgTqjpi_NJFHk57yQGBSpT17x01O4NobmXIaXMaw/exec">開かない場合はこちら</a>
+  <p>タップして開いてください</p>
+  <a class="open" id="openLink" href="https://script.google.com/macros/s/AKfycbyTnbWRFSx17HDczAzchackRgQ8lVUgTqjpi_NJFHk57yQGBSpT17x01O4NobmXIaXMaw/exec">開く →</a>
 </div>
 
-<script>
-  var target = document.getElementById('openLink').href;
-  setTimeout(function(){ location.replace(target); }, 350);
-</script>
 </body>
 </html>
