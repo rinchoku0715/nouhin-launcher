@@ -44,45 +44,21 @@
     display:inline-block;width:100%;padding:13px 18px;border-radius:12px;
     background:var(--accent);color:#fff;font-weight:700;font-size:14px;text-decoration:none;
   }
-  html,body{margin:0;overflow:hidden}
-  body{display:block;padding:0}
-  #appFrame{
-    position:fixed;inset:0;width:100%;height:100vh;height:100dvh;
-    border:none;display:block;background:var(--bg);
-  }
-  #loading{
-    position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
-    background:var(--bg);padding:24px;transition:opacity .25s ease;
-  }
-  #loading.hide{opacity:0;pointer-events:none}
 </style>
 </head>
 <body>
 
-<iframe id="appFrame" src="https://script.google.com/macros/s/AKfycbyTnbWRFSx17HDczAzchackRgQ8lVUgTqjpi_NJFHk57yQGBSpT17x01O4NobmXIaXMaw/exec" title="納品書トラッカー" allow="clipboard-write"></iframe>
-
-<div id="loading">
-  <div class="card">
-    <div class="mark">上々<br>納品書</div>
-    <div class="spinner" aria-hidden="true"></div>
-    <h1>納品書トラッカー</h1>
-    <p>アプリを開いています…</p>
-    <a class="open" id="openLink" href="https://script.google.com/macros/s/AKfycbyTnbWRFSx17HDczAzchackRgQ8lVUgTqjpi_NJFHk57yQGBSpT17x01O4NobmXIaXMaw/exec" target="_top">開かない場合はこちら</a>
-  </div>
+<div class="card">
+  <div class="mark">上々<br>納品書</div>
+  <div class="spinner" aria-hidden="true"></div>
+  <h1>納品書トラッカー</h1>
+  <p>アプリを開いています…</p>
+  <a class="open" id="openLink" href="https://script.google.com/macros/s/AKfycbyTnbWRFSx17HDczAzchackRgQ8lVUgTqjpi_NJFHk57yQGBSpT17x01O4NobmXIaXMaw/exec">開かない場合はこちら</a>
 </div>
 
 <script>
-  var frame = document.getElementById('appFrame');
-  var loading = document.getElementById('loading');
-  var done = false;
-  function reveal(){
-    if (done) return;
-    done = true;
-    loading.classList.add('hide');
-    setTimeout(function(){ loading.style.display = 'none'; }, 300);
-  }
-  frame.addEventListener('load', reveal);
-  setTimeout(function(){ if (!done) reveal(); }, 6000);
+  var target = document.getElementById('openLink').href;
+  setTimeout(function(){ location.replace(target); }, 350);
 </script>
 </body>
 </html>
